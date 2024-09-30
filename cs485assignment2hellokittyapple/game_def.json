@@ -1,0 +1,583 @@
+{
+
+   "start" : { 
+                "text": "<h1>welcome to the hello kitty cafe <3 </h1>",
+                "img": "/imgs/hellokittydoor.jpg",
+                "next_state" : [ {
+                                    "type" : "button",
+                                    "text" : "enter the cafe <3",
+                                    "next_state" : "gstart",
+                                    "input" : "Y"
+                                }
+                                ]
+                },
+    "intro" : {  
+                "mp4" : "/mp4/allstar.mp4",
+                "next_state" : [ {  
+                                    "type" : "button",
+                                    "text" : "Start",
+                                    "next_state" : "gstart",
+                                    "input" : "Y"
+                                }
+                                ]
+                },
+
+    "gstart" : {
+                "img" : "/imgs/mainhellokittycafe.jpg",
+                "background" : "/sounds/cutemusiccafe.mp3",
+                "text": "<body> as you step into the hello kitty café on a bustling early morning, the scent of freshly brewed coffee and sweet pastries fills the air, instantly welcoming you.<br> <br>the café is adorned with pastel pinks, soft whites, and adorable hello kitty décor, creating a cozy and cheerful atmosphere.<br> <br>despite the morning rush, the friendly staff greet you with warm smiles, and the gentle hum of conversation blends with the sound of clinking mug. </body> ",
+                "next_state" : [ {
+                                    "type" : "button",
+                                    "text" : "walk up to the counter",
+                                    "next_state" : "gotocounter",
+                                    "input" : "Y"
+                                }
+                                ]
+                },
+    "gotocounter" : { 
+                "text": "<body> hello kitty greets you with a smile.</body>",
+                "dialogue": "<h2> hello kitty: good morning! is it your first time visiting our cafe?</h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "next_state" : [ {
+                                    "text" : "yes, i'm new here",
+                                    "next_state" : "new",
+                                    "input" : "Y" 
+                                },
+                                { 
+                                    "text" : "no, i've been here before",
+                                    "next_state" : "regular",
+                                    "input" : "X" 
+                                }  
+                                ]   
+                },
+    "new" : { 
+                "text": "<br>",
+                "dialogue": "<h2> hello kitty: well, welcome to the hello kitty cafe!<br> here is a copy of our menu: </h2>",
+                "img" : "/imgs/hkcmenu.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "order",
+                                    "next_state" : "order",
+                                    "input" : "Y" 
+                                }
+                                ]   
+                },
+    "regular" : { 
+                "text": "<br>",
+                "dialogue": "<h2> hello kitty: welcome back! here is the menu. you can order when you are ready! </h2>",
+                "img" : "/imgs/hkcmenu.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "order",
+                                    "next_state" : "order",
+                                    "input" : "Y" 
+                                }
+                                ]      
+                },
+    "order" : { 
+                "text": "<body> you take a look at the menu <br> hmm... i only have enough money to buy 1 item. which should i get today, a food item or a drink item? </body>",
+                "img" : "/imgs/hkcmenu.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "food",
+                                    "next_state" : "food",
+                                    "input" : "Y" 
+                                },
+                                { 
+                                    "text" : "drink",
+                                    "next_state" : "drink",
+                                    "input" : "X" 
+                                }
+                                ]      
+                },
+    "food" : { 
+                "text": "<body> you decided to get food </body>",
+                "dialogue": "<h2> hello kitty: wonderful! which food item did you want?",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "croissant",
+                                    "next_state" : "croissant",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "berry cake",
+                                    "next_state" : "berrycake",
+                                    "input" : "b" 
+                                },
+                                { 
+                                    "text" : "muffin",
+                                    "next_state" : "muffin",
+                                    "input" : "c" 
+                                },
+                                { 
+                                    "text" : "apple tart",
+                                    "next_state" : "appletart",
+                                    "input" : "d" 
+                                }
+                                ]      
+                },
+    "drink" : { 
+                "text": "<body> you decided to get a drink </body>",
+                "dialogue": "<h2> hello kitty: wonderful! which drink did you want?",
+                "img" : "/imgs/hkcmenu.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "matcha",
+                                    "next_state" : "matcha",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "americano",
+                                    "next_state" : "americano",
+                                    "input" : "b" 
+                                },
+                                { 
+                                    "text" : "espresso",
+                                    "next_state" : "espresso",
+                                    "input" : "c" 
+                                },
+                                { 
+                                    "text" : "mocha",
+                                    "next_state" : "mocha",
+                                    "input" : "d" 
+                                }
+                                ]      
+                },
+    "croissant" : { 
+                "text": "<body> you decided to order the croissant </body>",
+                "dialogue": "<h2> hello kitty: the croissant! nice choice! those are one of my favorites! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "croissantcash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "croissantcard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "croissantcash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "croissantwait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "croissantcard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "croissantwait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "croissantwait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 croissant! thank you for purchasing! enjoy your meal.</h2>",
+                "img" : "/imgs/food/croissant.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]         
+                },
+    "berrycake" : { 
+                "text": "<body> you decided to order the berry cake </body>",
+                "dialogue": "<h2> hello kitty: the berry cake! nice choice! those are one of my favorites! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "berrycakecash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "berrycakecard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "berrycakecash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "berrycakewait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "berrycakecard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "berrycakewait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "berrycakewait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 berry cake! thank you for purchasing! enjoy your meal.</h2>",
+                "img" : "/imgs/food/berrycake.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "muffin" : { 
+                "text": "<body> you decided to order the muffin </body>",
+                "dialogue": "<h2> hello kitty: the muffin! nice choice! those are one of my favorites! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "muffincash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "muffincard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "muffincash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "muffinwait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "muffincard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "muffinwait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "muffinwait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 muffin! thank you for purchasing! enjoy your meal.</h2>",
+                "img" : "/imgs/food/muffin.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]         
+                },
+    "appletart" : { 
+                "text": "<body> you decided to order the appletart</body>",
+                "dialogue": "<h2> hello kitty: the apple tart! nice choice! those are one of my favorites! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "appletartcash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "appletartcard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "appletartcash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "appletartwait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "appletartcard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "appletartwait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "appletartwait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 apple tart! thank you for purchasing! enjoy your meal.</h2>",
+                "img" : "/imgs/food/appletart.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]         
+                },
+    "matcha" : { 
+                "text": "<body> you decided to order the matcha</body>",
+                "dialogue": "<h2> hello kitty: matcha! nice choice! that's one of my favorite drinks! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "matchacash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "matchacard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "matchacash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "matchawait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "matchacard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "matchawait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "matchawait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 matcha latte! thank you for purchasing! enjoy your drink.</h2>",
+                "img" : "/imgs/drinks/matcha.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]         
+                },
+    "americano" : { 
+                "text": "<body> you decided to order the americano</body>",
+                "dialogue": "<h2> hello kitty: americano! nice choice! that's one of my favorite drinks! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "americanocash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "americanocard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "americanocash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "americanowait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "americanocard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "americanowait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "americanowait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 americano! thank you for purchasing! enjoy your drink.</h2>",
+                "img" : "/imgs/drinks/americano.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]       
+                },
+    "espresso" : { 
+                "text": "<body> you decided to order the espresso</body>",
+                "dialogue": "<h2> hello kitty: espresso! nice choice! that's one of my favorite drinks! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "espressocash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "espressocard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "espressocash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "espressowait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "espressocard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "espressowait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "espressowait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 espresso! thank you for purchasing! enjoy your drink.</h2>",
+                "img" : "/imgs/drinks/espresso.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]          
+                },
+    "mocha" : { 
+                "text": "<body> you decided to order the mocha</body>",
+                "dialogue": "<h2> hello kitty: mocha! nice choice! that's one of my favorite drinks! <br> will that be cash or card today? </h2>",
+                "img" : "/imgs/atcounter.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "cash",
+                                    "next_state" : "mochacash",
+                                    "input" : "a" 
+                                },
+                                { 
+                                    "text" : "card",
+                                    "next_state" : "mochacard",
+                                    "input" : "b" 
+                                }
+                                ]      
+                },
+    "mochacash" : { 
+                "text": "<body> you give your cash to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/cash.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "mochawait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },    
+    "mochacard" : { 
+                "text": "<body> you give your credit card to hello kitty </body>",
+                "dialogue": "<h2> hello kitty: thank you! we will have it out shortly.</h2>",
+                "img" : "/imgs/card.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "wait for your food",
+                                    "next_state" : "mochawait",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "mochawait" : { 
+                "text": "<body> hello kitty calls out your order </body>",
+                "dialogue": "<h2> hello kitty: 1 mocha! thank you for purchasing! enjoy your drink.</h2>",
+                "img" : "/imgs/drinks/mocha.png",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "finish your meal",
+                                    "next_state" : "finishmeal",
+                                    "input" : "a" 
+                                }
+                                ]      
+                },
+    "finishmeal" : { 
+                "text": "<body> you finish up your meal and get up from your seat. </body>",
+                "dialogue": "<h2> hello kitty: thank you so much for stopping in today! hope to see you again soon!.</h2>",
+                "img" : "/imgs/mainhellokittycafe.jpg",
+                "back_sound" : "",
+                "next_state" : [ { 
+                                    "text" : "play again!!",
+                                    "next_state" : "start",
+                                    "input" : "a" 
+                                }
+                                ]      
+                }
+}
